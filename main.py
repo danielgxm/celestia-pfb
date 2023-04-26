@@ -12,6 +12,23 @@ logger = logging.basicConfig(
     level=logging.DEBUG
 )
 
+@app.route('/node_status', methods=['GET'])
+def node_status():
+    """ Get status node
+    """
+    try:
+        node = requests.get(DEFAULT_NODE_URL + f'/balance')
+        node_data = node.json()
+
+        if not node_data['amount']:
+            raise Exception('Not data')
+
+        return jsonify(node_data)
+
+    except Exception as e:
+        logging.error(e)
+        return jsonify({'error': 500, 'message': str(e)}), 500
+
 @app.route('/')
 def index():
     """ Home page
