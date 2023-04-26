@@ -1,0 +1,29 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Submit PayForBlob Transaction</title>
+<link rel="stylesheet" href="/static/css/main.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="flex">
+      <div><h1>Submit PayForBlob Transaction</h1></div>
+    </header>
+    <form method="get" class="node">
+      <div class="form_rows_container flex">
+        <div class="form_field_container">
+          <span class="form_field_label">Node</span>
+          <input name="tx_node_url" class="form_field_input" type="url" value="{{ node_url }}" placeholder="Node url" required>
+        </div>
+        <div class="form_field_container" style="padding: 10 0 0 0;">
+          <div class="node_status" title="rpc_url">node status</div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <!-- JS -->
+  <script src="/static/js/simple-notify.min.js"></script>
+  <script src="/static/js/main.js"></script>
+</body>
+</html>
