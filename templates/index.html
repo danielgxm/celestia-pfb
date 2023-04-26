@@ -19,6 +19,22 @@
           <div class="node_status" title="rpc_url">node status</div>
         </div>
       </div>
+      <div class="form_rows_container flex">
+        <div class="form_field_container">
+          <span class="form_field_label">Gas limit</span>
+          <input name="tx_gas_limit" class="form_field_input" type="number" value="{{ gas_limit }}" min="1" placeholder="Gas limit" required>
+        </div>
+        <div class="form_field_container">
+          <span class="form_field_label">Fee</span>
+          <input name="tx_fee" class="form_field_input" type="number" value="{{ fee }}" min="1" placeholder="Fee" required>
+        </div>
+      </div>
+      <br>
+      <div class="form_field_container">
+        <span class="form_field_label">Data</span>
+        <textarea name="tx_data" class="form_field_textarea" placeholder="Your data to blockchain" required></textarea>
+      </div>
+      <button class="form_button">Send data</button>
     </form>
   </div>
 
