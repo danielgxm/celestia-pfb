@@ -26,3 +26,140 @@ body {
 }
 .node_status.active::before { background: #438709; }
 .node_status.inactive::before { background: red; }
+
+form {
+  padding: 30px 0;
+}
+.form_field_container {
+  position: relative;
+  margin: 15px 0;
+}
+.form_field_label {
+  font-size: 15px;
+  font-weight: 300;
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  background: #ffffff;
+}
+.form_field_input {
+  width: 100%;
+  font-weight: 200;
+  min-height: 53px;
+  padding: 0 20px;
+  border: 1px solid #EBEBEB;
+  border-radius: 3px;
+  font-size: 15px;
+  outline: none;
+  transition: border 0.1s ease-in-out;
+}
+.form_field_textarea {
+  width: 100%;
+  font-weight: 200;
+  min-height: 150px;
+  padding: 26px 20px;
+  border: 1px solid #EBEBEB;
+  border-radius: 3px;
+  font-size: 15px;
+  outline: none;
+  transition: border 0.1s ease-in-out;
+}
+.form_button {
+  background: #f4f7f6;
+  color: #19a2d0;
+  border: 1px solid #212524;
+  border-radius: 6px;
+  width: 100%;
+  height: 53px;
+  outline: none;
+  font-size: 20px;
+  cursor: pointer;
+  margin: 15px 0;
+}
+.form_button:active {
+  background: #1ae132;
+  position: relative;
+  top: 1px;
+}
+.form_button.inactive {
+  background: none;
+  color: #bf0909;
+  pointer-events: none;
+}
+.form_button.loader {
+  background: none;
+  /* background-image: url("data:image/svg+xml,%3Csvg width='38' height='38' viewBox='0 0 38 38' xmlns='http://www.w3.org/2000/svg' stroke='%23000'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg transform='translate(1 1)' stroke-width='2'%3E%3Ccircle stroke-opacity='.5' cx='18' cy='18' r='18'/%3E%3Cpath d='M36 18c0-9.94-8.06-18-18-18'%3E%3CanimateTransform attributeName='transform' type='rotate' from='0 18 18' to='360 18 18' dur='1s' repeatCount='indefinite'/%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); */
+  background-repeat: no-repeat;
+  background-position: center center;
+  color: transparent;
+  transition: unset;
+  pointer-events: none;
+}
+.form_field_textarea:focus,
+.form_field_input:focus {
+  border-color: #000;
+}
+.form_rows_container  {
+  justify-content: space-between;
+  gap: 25px;
+}
+.form_rows_container .form_field_container {
+  width: 100%;
+}
+.transaction {
+  /* border: 1px solid #EBEBEB; */
+  border-radius: 6px;
+}
+.transaction_title {
+  border-bottom: 1px solid #EBEBEB;
+  padding: 15px 20px;
+  font-weight: 400;
+  border-radius: 3px;
+}
+.transaction_row {
+  justify-content: space-around;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #ebebeb;
+}
+.transaction_row_data {
+  text-align: left;
+  padding: 15px 20px;
+  width: 33.3333%
+}
+.transaction_info_item {
+  padding: 15px 20px;
+  border-bottom: 1px solid #ebebeb;
+}
+.transaction_info_item:last-child {
+  border: none;
+}
+.transaction_row_data div {
+  padding-bottom: 5px;
+}
+.transaction_row_data span {
+  font-size: 15px;
+}
+.emblem_explorer {
+  font-size: 12px;
+  color: #ffffff;
+  background: #17B8FF;
+  border-radius: 12px;
+  padding: 3px 5px;
+  align-content: center;
+  margin-left: 5px;
+}
+.tx_title {
+  margin-bottom: 5px;
+}
+.emblem {
+  display: inline-block;
+  padding: 2px 5px;
+  background: #1B1B1B;
+  color: #fff;
+  border-radius: 12px;
+  font-size: 14px;
+  border: 1px solid transparent;
+}
+.emblem_orange {
+  background: orange;
+}
