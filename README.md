@@ -2,6 +2,9 @@
 
 You can use this project to send data to the celestia network.
 
+![submit](Screenshot_20230427_181856.png)
+![get shares](Screenshot_20230427_181732.png))
+
 At first, you need to run a [Celestia Node](https://docs.celestia.org/nodes/light-node/).
 
 ## How to run?
