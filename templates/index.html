@@ -32,20 +32,20 @@
       <br>
       <div class="form_field_container">
         <span class="form_field_label">Data</span>
-        <textarea name="tx_data" class="form_field_textarea" placeholder="Your data to blockchain" required></textarea>
+        <textarea name="tx_data" class="form_field_textarea" placeholder="Please type your data" required></textarea>
       </div>
-      <button class="form_button">Send data</button>
+      <button class="form_button">Submit</button>
     </form>
     <div class="transaction" style="display: none;">
       <div class="transaction_title">Transaction info</div>
       <div class="transaction_info_item">
         <div></div>
         <div>
-          <small><span class="emblem">text:</span></small>
+          <span class="emblem">text:</span>
           <span id="tx_info_decode_data"></span>
         </div>
         <div>
-          <small><span class="emblem">hex:</span></small> <span id="tx_info_encode_data"></span>
+          <span class="emblem">hex:</span> <span id="tx_info_encode_data"></span>
         </div>
       </div>
       <div class="transaction_info_item">
@@ -56,25 +56,25 @@
           </a>
         </div>
       </div>
-      <div class="transaction_row flex">
+      <div class="transaction_row">
         <div class="transaction_row_data">
-          <div><b>Date and Time:</b></div>
+          <span><b>Date and Time:</b></span>
           <span id="tx_info_date"></span>
         </div>
         <div class="transaction_row_data">
-          <div><b>Namespace ID:</b></div>
+          <span><b>Namespace ID:</b></span>
           <span id="tx_info_namespace_id"></span>
         </div>
         <div class="transaction_row_data">
-          <div><b>Height:</b></div>
+          <span><b>Height:</b></span>
           <span id="tx_info_height"></span>
         </div>
         <div class="transaction_row_data">
-          <div><b>Gas used:</b></div>
+          <span><b>Gas used:</b></span>
           <span id="tx_info_gas_used"></span>
         </div>
         <div class="transaction_row_data">
-          <div><b>Code:</b></div>
+          <span><b>Code:</b></span>
           <span id="tx_info_code"></span>
         </div>
       </div>
