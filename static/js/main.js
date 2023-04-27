@@ -69,7 +69,7 @@
         document.getElementById("tx_info_date").textContent = data.date;
         document.getElementById("tx_info_namespace_id").innerHTML = data.namespace_id;
         document.getElementById("tx_info_height").innerHTML = data.height;
-        document.getElementById("tx_info_gas_wanted").innerHTML = data.gas_wanted;
+        // document.getElementById("tx_info_gas_wanted").innerHTML = data.gas_wanted;
         document.getElementById("tx_info_gas_used").innerHTML = data.gas_used;
         document.getElementById("tx_info_decode_data").innerHTML = data.data;
         document.getElementById("tx_info_encode_data").innerHTML = data.data_hex;

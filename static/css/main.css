@@ -26,7 +26,7 @@ body {
 }
 a {
   text-decoration: none;
-  color: #f3e710;
+  color: #2dc70f;
 }
 header {
   padding: 30px 0;
@@ -128,19 +128,17 @@ form {
   width: 100%;
 }
 .transaction {
-  /* border: 1px solid #EBEBEB; */
   border-radius: 6px;
 }
 .transaction_title {
-  border-bottom: 1px solid #EBEBEB;
+  border-bottom: 1px #EBEBEB;
   padding: 15px 20px;
-  font-weight: 400;
-  border-radius: 3px;
+  font-weight: 200;
 }
 .transaction_row {
   justify-content: space-around;
   flex-wrap: wrap;
-  border-bottom: 1px solid #ebebeb;
+  border-bottom: 1px #ebebeb;
 }
 .transaction_row_data {
   text-align: left;
@@ -149,7 +147,7 @@ form {
 }
 .transaction_info_item {
   padding: 15px 20px;
-  border-bottom: 1px solid #ebebeb;
+  border-bottom: 1px #ebebeb;
 }
 .transaction_info_item:last-child {
   border: none;
@@ -160,29 +158,14 @@ form {
 .transaction_row_data span {
   font-size: 15px;
 }
-.emblem_explorer {
-  font-size: 12px;
-  color: #ffffff;
-  background: #17B8FF;
-  border-radius: 12px;
-  padding: 3px 5px;
-  align-content: center;
-  margin-left: 5px;
-}
 .tx_title {
   margin-bottom: 5px;
 }
 .emblem {
   display: inline-block;
   padding: 2px 5px;
-  background: #1B1B1B;
-  color: #fff;
-  border-radius: 12px;
   font-size: 14px;
   border: 1px solid transparent;
-}
-.emblem_orange {
-  background: orange;
 }
 .btn_check_height {
   background: none;

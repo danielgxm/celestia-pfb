@@ -6,9 +6,9 @@
 </head>
 <body>
   <div class="container">
-    <header class="flex">
+    <!-- <header class="flex">
       <div><h1>Submit PayForBlob Transaction</h1></div>
-    </header>
+    </header> -->
     <form method="get" class="node">
       <div class="form_rows_container flex">
         <div class="form_field_container">
@@ -38,6 +38,24 @@
     </form>
     <div class="transaction" style="display: none;">
       <div class="transaction_title">Transaction info</div>
+      <div class="transaction_info_item">
+        <div></div>
+        <div>
+          <small><span class="emblem">text:</span></small>
+          <span id="tx_info_decode_data"></span>
+        </div>
+        <div>
+          <small><span class="emblem">hex:</span></small> <span id="tx_info_encode_data"></span>
+        </div>
+      </div>
+      <div class="transaction_info_item">
+        <div class="tx_title"><b>Transaction hash:</b></div>
+        <div>
+          <a href="#" id="tx_info_tx_hash_link" class="flex" target="_blank">
+            <span id="tx_info_tx_hash"></span>
+          </a>
+        </div>
+      </div>
       <div class="transaction_row flex">
         <div class="transaction_row_data">
           <div><b>Date and Time:</b></div>
@@ -52,10 +70,6 @@
           <span id="tx_info_height"></span>
         </div>
         <div class="transaction_row_data">
-          <div><b>Gas wanted:</b></div>
-          <span id="tx_info_gas_wanted"></span>
-        </div>
-        <div class="transaction_row_data">
           <div><b>Gas used:</b></div>
           <span id="tx_info_gas_used"></span>
         </div>
@@ -65,27 +79,7 @@
         </div>
       </div>
       <div class="transaction_info_item">
-        <div class="tx_title"><b>Data:</b></div>
-        <div>
-          <small><span class="emblem">text</span></small>
-          <span id="tx_info_decode_data"></span>
-        </div>
-        <div>
-          <small><span class="emblem emblem_orange">hex</span></small> <span id="tx_info_encode_data"></span>
-        </div>
-      </div>
-      <div class="transaction_info_item">
-        <div class="tx_title"><b>Transaction hash:</b></div>
-        <div>
-          <a href="#" id="tx_info_tx_hash_link" class="flex" target="_blank">
-            <span id="tx_info_tx_hash"></span>
-            <span class="emblem_explorer">explorer</span>
-          </a>
-        </div>
-      </div>
-      <div class="transaction_info_item">
-        <div class="tx_title"><b>Namespace share / height info:</b></div>
-        <button class="form_button btn_check_height">Check namespace height value / shares</button>
+        <button class="form_button btn_check_height">Check shares</button>
         <pre id="check_height_data" style="white-space: break-spaces;word-wrap: break-word;"></pre>
       </div>
     </div>
