@@ -3,6 +3,7 @@
     const api = {
       node_status: "/node_status",
       submit_pfb: "/submit_pfb",
+      get_shares: "/get_shares",
       explorer: "https://testnet.mintscan.io/celestia-incentivized-testnet/",
     };
 
@@ -10,7 +11,7 @@
     const form = document.body.querySelector("form");
 
     // btn tx block height
-    const btn_block_height = document.body.querySelector(".btn_check_height");
+    const btn_block_shares = document.body.querySelector(".btn_get_shares");
 
     // check node status
     document.body.onload = async (e) => {
@@ -66,29 +67,28 @@
         }
         throw new Error('Data error');
       }).then(data => {
+        document.getElementById("tx_info_decode_data").innerHTML = data.data;
+        document.getElementById("tx_info_encode_data").innerHTML = data.data_hex;
         document.getElementById("tx_info_date").textContent = data.date;
         document.getElementById("tx_info_namespace_id").innerHTML = data.namespace_id;
         document.getElementById("tx_info_height").innerHTML = data.height;
-        // document.getElementById("tx_info_gas_wanted").innerHTML = data.gas_wanted;
         document.getElementById("tx_info_gas_used").innerHTML = data.gas_used;
-        document.getElementById("tx_info_decode_data").innerHTML = data.data;
-        document.getElementById("tx_info_encode_data").innerHTML = data.data_hex;
         document.getElementById("tx_info_tx_hash").innerHTML = data.txhash;
         document.getElementById("tx_info_code").innerHTML = data.code;
         document.getElementById("tx_info_tx_hash_link").setAttribute("href", api.explorer + "tx/" + data.txhash);
-        document.querySelector(".btn_check_height").setAttribute("data-namespace", data.namespace_id);
-        document.querySelector(".btn_check_height").setAttribute("data-height", data.height);
+        document.querySelector(".btn_get_shares").setAttribute("data-namespace", data.namespace_id);
+        document.querySelector(".btn_get_shares").setAttribute("data-height", data.height);
 
         let txblock = document.querySelector(".transaction");
         txblock.style.display = "block";
 
         let transaction_status_submitted = new Notify({
           status: 'success',
-          title: 'Transaction submitted',
+          title: 'submit seccuss',
           text: '',
           effect: 'slide',
-          type: 3,
-          position: 'right bottom'
+          type: 1,
+          position: 'right top'
         });
 
         form.querySelector('.form_button').classList.toggle("loader");
@@ -102,8 +102,46 @@
           title: 'Error',
           text: err.message,
           effect: 'slide',
-          type: 3,
-          position: 'right bottom'
+          type: 1,
+          position: 'right top'
+        });
+        console.log(err);
+      });
+    });
+
+    // check shares
+    btn_block_shares.addEventListener('click', async (e) => {
+      btn_block_shares.classList.toggle("loader");
+      e.preventDefault();
+      const height = await fetch(api.get_shares, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8'
+        },
+        body: JSON.stringify({
+          "height": btn_block_shares.getAttribute("data-height"),
+          "namespace": btn_block_shares.getAttribute("data-namespace")
+        })
+      })
+      .then(response => {
+        if (response.ok) {
+          btn_block_shares.classList.toggle("loader");
+          return response.json();
+        }
+        throw new Error('Error, Please try again!');
+      }).then(data => {
+        btn_block_shares.style.display = 'none';
+        document.getElementById("get_shares_data").innerHTML = JSON.stringify(data);
+        return data;
+      }).catch(err => {
+        btn_block_shares.classList.toggle("loader");
+        new Notify({
+          status: 'error',
+          title: 'Error',
+          text: 'There is no data yet, Please try again later!',
+          effect: 'slide',
+          type: 1,
+          position: 'right top'
         });
         console.log(err);
       });

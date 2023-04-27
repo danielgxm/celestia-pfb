@@ -12,6 +12,36 @@ logger = logging.basicConfig(
     level=logging.DEBUG
 )
 
+@app.route('/get_shares', methods=['POST'])
+def height():
+    """ Get shares
+    """
+    try:
+        data = request.get_json(force=True)
+
+        if (
+            not data['height'] or
+            not data['namespace']
+        ):
+           raise Exception('Insufficient data')
+
+        namespace_id = data['namespace']
+        height = data['height']
+
+        tx_height = requests.get(
+            DEFAULT_NODE_URL + f'/namespaced_shares/{namespace_id}/height/{int(height)}'
+        )
+        tx_height_data = tx_height.json()
+
+        if not tx_height_data['height']:
+            raise Exception('Context deadline exceeded')
+
+        return jsonify(tx_height_data), 200
+
+    except Exception as e:
+        logging.error(e)
+        return jsonify({'error': 500, 'message': str(e)}), 500
+
 @app.route('/submit_pfb', methods=['POST'])
 def submit_pfb():
     """ Create transaction
