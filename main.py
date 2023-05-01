@@ -76,7 +76,6 @@ def submit_pfb():
 
         txhash = tx_submit_data['txhash']
         height = tx_submit_data['height']
-        gas_wanted = tx_submit_data['gas_wanted']
         gas_used = tx_submit_data['gas_used']
 
         return jsonify({
@@ -84,7 +83,6 @@ def submit_pfb():
                 'namespace_id': namespace_id,
                 "data_hex": tx_data,
                 "data": data['tx_data'],
-                'gas_wanted': gas_wanted,
                 'gas_used': gas_used,
                 'height': height,
                 'code': '200',
